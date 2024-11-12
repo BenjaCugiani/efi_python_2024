@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Equipos</title>
+</head>
+<body>
+    <h1>Lista de Equipos</h1>
+    <a href="{{ url_for('nuevo_equipo') }}">Nuevo Equipo</a>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nombre</th>
+                <th>Modelo</th>
+                <th>Categoría</th>
+                <th>Costo</th>
+                <th>Stock</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for equipo in equipos %}
+            <tr>
+                <td>{{ equipo.id }}</td>
+                <td>{{ equipo.nombre }}</td>
+                <td>{{ equipo.modelo.nombre }}</td>
+                <td>{{ equipo.categoria.nombre }}</td>
+                <td>{{ equipo.costo }}</td>
+                <td>{{ equipo.stock.cantidad }}</td>
+                <td>
+                    <a href="{{ url_for('editar_equipo', id=equipo.id) }}">Editar</a>
+                    <form action="{{ url_for('eliminar_equipo', id=equipo.id) }}" method="POST" style="display:inline;">
+                        <button type="submit">Eliminar</button>
+                    </form>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <a href="{{ url_for('index') }}">Inicio</a>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Modelos</title>
+</head>
+<body>
+    <h1>Lista de Modelos</h1>
+    <a href="{{ url_for('nuevo_modelo') }}">Nuevo Modelo</a>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nombre</th>
+                <th>Categoría</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for modelo in modelos %}
+            <tr>
+                <td>{{ modelo.id }}</td>
+                <td>{{ modelo.nombre }}</td>
+                <td>{{ modelo.categoria.nombre }}</td>
+                <td>
+                    <a href="{{ url_for('editar_modelo', id=modelo.id) }}">Editar</a>
+                    <form action="{{ url_for('eliminar_modelo', id=modelo.id) }}" method="POST" style="display:inline;">
+                        <button type="submit">Eliminar</button>
+                    </form>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <a href="{{ url_for('index') }}">Inicio</a>
+</body>
+</html>

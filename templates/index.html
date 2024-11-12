@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio</title>
+</head>
+<body>
+    <h1>Bienvenido al Sistema de Gestión</h1>
+    <ul>
+        <li><a href="{{ url_for('lista_equipos') }}">Ver Equipos</a></li>
+        <li><a href="{{ url_for('nuevo_equipo') }}">Agregar Nuevo Equipo</a></li>
+        <li><a href="{{ url_for('lista_modelos') }}">Ver Modelos</a></li>
+        <li><a href="{{ url_for('nuevo_modelo') }}">Agregar Nuevo Modelo</a></li>
+        <li><a href="{{ url_for('lista_categorias') }}">Ver Categorías</a></li>
+        <li><a href="{{ url_for('nueva_categoria') }}">Agregar Nueva Categoría</a></li>
+    </ul>
+</body>
+</html>
+
+
+
+<!--
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Index</title>
+</head>
+<body>
+    <h1>Bienvenido al Sistema de Gestión</h1>
+    <ul>
+        <li><a href="{{ url_for('lista_equipos') }}">Ver Equipos</a></li>
+        <li><a href="{{ url_for('nuevo_equipo') }}">Agregar Nuevo Equipo</a></li>
+        <li><a href="{{ url_for('lista_modelos') }}">Ver Modelos</a></li>
+        <li><a href="{{ url_for('nuevo_modelo') }}">Agregar Nuevo Modelo</a></li>
+        <li><a href="{{ url_for('lista_categorias') }}">Ver Categorías</a></li>
+        <li><a href="{{ url_for('nueva_categoria') }}">Agregar Nueva Categoría</a></li>
+    </ul>
+</body>
+</html>
+-->
